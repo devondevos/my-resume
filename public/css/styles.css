@@ -1,0 +1,385 @@
+/* styles for normal/regular sized screens */
+body {
+    background-color: #85b6e5;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
+header {
+    background-color: #e5b485;
+    color: black;
+    padding-top: 10px;
+}
+
+footer {
+    text-align: center;
+    background-color: #e5b485;
+    color: black;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-pills {
+    justify-content: flex-end;
+}
+
+.word {
+    font-size: 2rem; /* Adjust font size as needed */
+    color: black;
+    padding-left: 7px;
+}
+
+.nav-link {
+    color: black;
+    min-height: 100%;
+}
+
+.nav-link:hover {
+    color: black;
+    background-color: #b7906a;
+    min-height: 100%;
+}
+
+.nav-item:active,
+.active-link {
+    background-color: #b7906a;
+    min-height: 100%;
+}
+
+.nav-item:active:hover {
+    background-color: #e5b485;
+}
+
+.nav-item {
+    transition: background-color 0.2s ease;
+}
+
+.nav-item:hover {
+    background-color: #e5b485;
+    border-radius: 6px;
+}
+
+/*first page, about me*/
+
+#hero {
+    border-bottom: 1px solid grey;
+    background: linear-gradient(-45deg, #304458, #624072, #85b6e5, grey, white);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.link {
+    text-decoration: none;
+}
+
+.card-link {
+    background-size: 100%;
+}
+
+.card-link:hover {
+    background-size: 150%;
+    background-position: center;
+}
+
+.web {
+    list-style-type: none;
+}
+
+.headerWork {
+    border-bottom: 3px solid grey;
+}
+
+@media screen and (max-width: 310px) {
+    /* Styles for screens 310px and smaller */
+    #header {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center-align items */
+        text-align: center; /* Center-align text */
+        margin-bottom: 10px; /* Add some spacing between links */
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+    #logo {
+        width: 20%;
+    }
+    span.fs-4 {
+        width: 100%;
+    }
+    .nav-item {
+        width: 100%;
+    }
+    #submitButton {
+        padding: 0px; /* Adjust padding for smaller screens */
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #profilePic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer {
+        justify-content: start;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for the dropdown button */
+.dropdown button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6%;
+    background-color: #85b6e5;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dropdown button:hover {
+    background-color: #e5b485;
+}
+
+/* Style for the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e5b485;
+    min-width: 100%;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+/* Style for the dropdown items */
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.2s ease;
+}
+
+/* Show the dropdown content when the button is hovered */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a.project1:hover, a.project2:hover, a.project3:hover {
+    background-color: #b7906a;
+    color: black;
+}
+
+
+/*second page, project 1*/
+.secondPage, .thirdPage {
+    height: 100vh;
+    padding: 10px;
+}
+
+.todoButton {
+    transition: background-color 0.5s ease;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    margin-right: 2px;
+    border-radius: 10px; /* Adjust the radius value to control the roundness */
+    padding: 5px; /* Add padding to see the effect more clearly */
+}
+
+.editInput {
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    padding: 6px;
+}
+
+.okButton {
+    transition: background-color 0.5s ease;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    border: none;
+    background-color: white;
+    border-radius: 10px; /* Adjust the radius value to control the roundness */
+    padding: 5px; /* Add padding to see the effect more clearly */
+}
+
+.okButton:hover {
+    background-color: #e5b485;
+}
+
+#submitButton {
+    padding: 6px;
+    background-color: white;
+}
+
+.todoButton:hover {
+    cursor: pointer;
+    background-color: #e5b485;
+}
+
+#itemShown {
+    list-style: none;
+}
+
+#theForm {
+    display: flex;
+    border: 1px solid black;
+    background-color: white;
+    border: 1px solid #333; /* Border color */
+    border-radius: 10px; /* Adjust the radius value to control the roundness */
+    padding: 5px; /* Add padding to see the effect more clearly */
+}
+
+#listItem {
+    border: none;
+    border-right: 3px solid lightgray;
+}
+
+textarea {
+    resize: none;
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    outline: none;
+    width: 100%;
+    overflow-y: hidden;
+    height: auto;
+}
+
+.listedItems {
+    height: auto;
+    resize: none;
+    margin: 0;
+    border: 1px solid #333; /* Border color */
+    border-radius: 10px; /* Adjust the radius value to control the roundness */
+    padding: 5px; /* Add padding to see the effect more clearly */
+    word-wrap: break-word;
+    outline: none;
+    width: 100%;
+    overflow-y: hidden;
+    background-color: white;
+}
+
+.todoItemListButtons {
+    display: flex;
+    flex-direction: row;
+}
+
+/* third page */
+
+.results {
+    position: relative;
+}
+
+.currentTimeAndDay {
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+}
+
+.containerPageTwo {
+    position: absolute;
+    z-index: auto;
+    top: 25px;
+    width: 100%;
+    overflow-x: auto; /* or overflow-x: scroll; */
+    white-space: nowrap; /* prevent cards from wrapping onto new lines */
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 5px;
+    margin-top: 25px;
+}
+
+.containerPageTwo::-webkit-scrollbar {
+    height: 20px;
+}
+
+.containerPageTwo::-webkit-scrollbar-thumb {
+    background-color: #dcb084;
+    width: 50px;
+}
+
+.containerPageTwo::-webkit-scrollbar:hover {
+    background-color: hsl(32, 100%, 80%);
+    cursor: pointer;
+}
+
+.card-container {
+    display: inline-flex;
+    width: 165px;
+    height: 135px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.userForm {
+    width: 100%;
+    background-color: white;
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid grey;
+    padding: 5px;
+}
+
+.userInput {
+    width: 100%;
+    height: 40px;
+    min-width: min-content;
+    border: none;
+    border-bottom: 2px solid lightgrey;
+    padding: 2px;
+    margin: 2px;
+}
+
+.submit {
+    background-color: lightgrey;
+    transition: background-color 0.5s ease;
+    border-radius: 10px;
+}
+
+.submit:hover {
+    background-color: #e5b485;
+}
