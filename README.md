@@ -17,7 +17,7 @@ It is built using:
   etc.
 
 The index (Home) page:
-![Screenshot 2024-01-25 132205](https://github.com/devondevos/my-resume/assets/52822153/9883e402-4250-4562-95ea-0dc7b415db42)
+![Screenshot 2024-01-25 134445](https://github.com/devondevos/my-resume/assets/52822153/c93480e6-451c-4e58-b39f-d111369db762)
 
 
 The todolistPage:
