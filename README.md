@@ -1,5 +1,5 @@
 # my-resume
-my resume (CV)
+my resume (CV), it is hosted on https://devondevos-my-resume.cyclic.app/
 
 to start it:
   "cd" to the location of the file,
