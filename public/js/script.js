@@ -97,6 +97,35 @@ const editItem = (index, event) => {
     // Create an "OK" button
     const okButton = $('<button>', { text: 'OK', class: 'okButton' });
 
+    // Function to handle editing completion
+    const completeEditing = () => {
+
+        const updatedItem = inputField.val().trim();
+        // Check if the value is not empty and has changed
+        if (updatedItem !== "" && updatedItem !== currentText) {
+            // Send an AJAX request to the server to update the item
+            $.ajax({
+                url: '/editItem',
+                method: 'PUT',
+                data: { index: index, updatedItem: updatedItem }, //index is the number of the item in the array, updatedItem is what you changed it to, saving it to data to be called in the success function
+                dataType: 'json', // Ensure that jQuery treats the response as JSON
+                success: function (data) {
+                    //
+                    todoArray = data.values
+                    // Handle success, e.g., update the UI with the new todoArray, stored in data
+                    displayValues(todoArray);
+                },
+                error: function (error) {
+                    // Handle error, if needed
+                    console.error('Error:', error);
+                }
+            });
+        } else {
+            // If the value is empty or unchanged, restore the original text
+            listedItemsElement.html(currentText);
+        }
+    };
+
     // Replace the text with a empty input field and add the "OK" button
     listedItemsElement.empty().append(inputField).append(okButton);
 
@@ -109,35 +138,10 @@ const editItem = (index, event) => {
     });
 
     // Add a click event to the "OK" button to handle editing completion
-    okButton.click(function () {
+    okButton.click(function (event) {
+        event.preventDefault();
         completeEditing();
     });
-
-    // Function to handle editing completion
-    const completeEditing = () => {
-        const updatedItem = inputField.val().trim();
-
-        // Check if the value is not empty and has changed
-        if (updatedItem !== "" && updatedItem !== currentText) {
-            // Send an AJAX request to the server to update the item
-            $.ajax({
-                url: '/editItem',
-                method: 'PUT',
-                data: { index: index, updatedItem: updatedItem }, //index is the number of the item in the array, updatedItem is what you changed it to, saving it to data to be called in the success function
-                success: function (data) {
-                    // Handle success, e.g., update the UI with the new todoArray, stored in data
-                    displayValues(data.values);
-                },
-                error: function (error) {
-                    // Handle error, if needed
-                    console.error('Error:', error);
-                }
-            });
-        } else {
-            // If the value is empty or unchanged, restore the original text
-            listedItemsElement.html(updatedItem);
-        }
-    };
 };
 
 

@@ -42,6 +42,9 @@ app.put('/editItem', (req, res) => {
     if (indexToEdit >= 0 && indexToEdit < todoArray.length) {
         // Update the todoArray on the server side
         todoArray[indexToEdit] = updatedItem;
+        // Set the Content-Type header to indicate JSON
+        res.setHeader('Content-Type', 'application/json');
+        console.log(todoArray)
 
         // Send a JSON response with the updated todoArray to the UI
         res.json({ values: todoArray });
@@ -55,6 +58,7 @@ app.post('/form', (req, res) => {
 
     // Add the item to the todoArray
     todoArray.push(item);
+    
 
     // Send a JSON response with the updated todoArray to the client
     res.json({ values: todoArray });
@@ -80,8 +84,8 @@ app.get('/', async (req,res) => {
     res.render('index.ejs')
 })
 
-app.get('/project1', async (req,res) => {
-    res.render('project_1', {todoArray})
+app.get('/project1', (req,res) => {
+    res.render('project_1', { todoArray })
 })
 
 app.get('/project2',limiter, async (req,res) => {
