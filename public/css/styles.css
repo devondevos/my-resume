@@ -71,6 +71,10 @@ a {
 
 /*first page, about me*/
 
+.myName {
+    font-size: 2rem;
+}
+
 #hero {
     border-bottom: 1px solid grey;
     background: linear-gradient(-45deg, #304458, #624072, #85b6e5, grey, white);
